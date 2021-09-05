@@ -1,26 +1,29 @@
 #include<iostream>
 
 using namespace std;
+
+//function for swapping the values at the address of variable
 void swap(int *x, int *y){
     int t = *x;
     *x = *y;
     *y = t;
 }
-
+//function for bubble sort
 void bsort(int ar[],int l){
-    for(int i=0;i<l-1;i++){
-        int s = 0;
-        for(int j=0;j<l-i-1;j++){
+    for(int i=0;i<l-1;i++){                 //loop for accessing each element
+        int s = 0;                          //variable for checking the execution of swap function
+        for(int j=0;j<l-i-1;j++){           //loop for comparing adjacent elements
             if(ar[j]>ar[j+1]){
                 swap(&ar[j], &ar[j+1]);
-                s = 1;
+                s = 1;                      
             }
         } 
-        if(s == 0){
+        if(s == 0){                         //checking if swapping occered or not
             break;
         }
     }
 }
+//function for printing the swapped array
 void printarr(int ar[], int l){
     for(int i=0; i<l; i++){
         cout<<ar[i]<<" ";
@@ -30,12 +33,13 @@ int main(){
     cout<<"Enter Size of array :";
     int n;
     cin>>n;
-    int a[n];
+    int a[n];                              //intializing array according to users need                
     cout<<"Enter any "<<n<<" numbers :";
     for(int i=0; i<n; i++){
         cin>>a[i];
     }
-    bsort(a,n);
-    printarr(a,n);
+    bsort(a,n);                           //calling bsort function for sorting
+    printarr(a,n);                        //calling printarr funtion
     return 0;
 }
+
