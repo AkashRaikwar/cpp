@@ -1,1 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i,j,n,k,s,a[50];
+    cout<<"Enter Size of array :";
+    cin>>n;
+    cout<<"\nEnter "<<n<<" elements :"<<endl;
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    cout<<"Enter how many times you have to shift the array: ";
+    cin>>s;
+    for(i=0;i<s;i++)
+    {
+        k=a[n-1];
+        for(j=n-1;j>0;j--)
+        {
+            a[j]=a[j-1];
+        }
+        a[0]=k;
+    }
+    cout<<"Rotated Array is : ";
+    for(i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    return 0;
+}
 
